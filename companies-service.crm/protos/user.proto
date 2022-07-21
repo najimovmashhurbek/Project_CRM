@@ -1,0 +1,37 @@
+syntax = "proto3";
+import "schedule.proto";
+
+package user;
+service userService {
+    rpc CreateUser(User) returns (User);
+    /*rpc DeleteUser(DeleteById) returns (DeleteUserRes);
+    rpc UpdateUser(User) returns (UpdateUserRes);
+    rpc GetAllUser(GetAllById) returns (User);
+    rpc ListUsers(GetUsersReq) returns (GetUsersRes);
+    rpc CheckUniquess(CheckUniqReq) returns (CheckUniqResp);
+    rpc LoginUser(LoginRequest) returns(User);*/
+
+}
+
+message User {
+    string id = 1;
+    string company_id = 2;
+    string lastName =3;
+    string firstName=4;
+    string email=5;
+    string password=6;
+    string phoneNumber=7;
+    string role=8;
+    string gender=9;
+    string info=10;
+    string createdAt = 11;
+    string updateAt =12;
+    string deletedAt =13;
+    string joinedDate=14;
+    string leftDate=15;
+    repeated Groups groups =16;
+
+}
+message User1{
+    repeated User users=1;
+}

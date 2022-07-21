@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package user;
+import "user.proto";
+
+service CompaniesService {
+    rpc CreateCompanies (Companies) returns (Companies);
+    
+}
+
+message Companies {
+    string id = 1;
+    string name = 2;
+    string phoneNumbers= 3;
+    string email=4;
+    string password=5;
+    string info =6;
+    string createdAt=7;
+    string updateAt=8;
+    string deletedAt=9;
+    repeated User User =10;
+
+}

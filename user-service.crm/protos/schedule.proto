@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package user;
+
+service ScheduleService {
+    rpc CreateSchedule (Groups) returns (Groups);   
+}
+message Groups {
+    string id = 1;
+    string company_id = 2;
+    string user_id= 3;
+    string groupName=4;
+    string createdAt=5;
+    string updateAt=6;
+    string deletedAt=7;
+    repeated Lesson lesson =8;
+    repeated Schedule_student schedule_student =9;
+}
+message Lesson{
+    string id=1;
+    string group_id=2;
+    string date=3;
+}
+message Schedule_student{
+    string id=1;
+    string user_id=2;
+    string group_id=3;
+    string attendance=4;
+    string attendanceDate=5;
+    string feedback=6;
+}
